@@ -32,7 +32,7 @@ class TagihanListrik():
         return self.tagihan
     def getUang(self):
         return self.uang
-    def getUang(self):
+    def getAdmin(self):
         return self.admin
         
 
