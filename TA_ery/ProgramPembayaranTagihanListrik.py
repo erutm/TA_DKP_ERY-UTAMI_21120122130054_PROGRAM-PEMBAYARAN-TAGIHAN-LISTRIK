@@ -99,11 +99,14 @@ def daya_listrik():
         biaya_admin = "\t\tRp 11000"
         pengali = 1699
         admin = 11000
-    if(KWh_awal == "" and KWh_akhir == ""):
+
+    if KWh_awal == "" and KWh_akhir == "":
         messagebox.showwarning("Warning", "KWh Awal dan KWh Akhir Harap Diisi!")
-    elif(KWh_awal >= KWh_akhir):
+    elif int(KWh_awal) < 0 or int(KWh_akhir) < 0:
+        messagebox.showwarning("Warning", "KWh Awal dan KWh Akhir Harus Bernilai Positif!")
+    elif int(KWh_awal) >= int(KWh_akhir):
         messagebox.showwarning("Warning", "KWh Akhir Harus Lebih Besar dari KWh Awal")
-    elif(KWh_akhir > KWh_awal):
+    elif int(KWh_akhir) > int(KWh_awal):
         totalmeter = (int(KWh_akhir) - int(KWh_awal))
         totaltagihan = (totalmeter * pengali) + admin
     print(totalmeter)
